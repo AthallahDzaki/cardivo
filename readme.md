@@ -10,6 +10,17 @@
 
 </div>
 
+## 🎨 Recently Modernized!
+
+This project has been updated with **modern design patterns and latest dependencies** to make your GitHub profile cards look amazing in 2024!
+
+### ✨ What's New:
+- **Modern Design**: Glassmorphism effects, multi-layer shadows, and smooth animations
+- **Better Typography**: Improved readability with modern font sizing and spacing
+- **Enhanced Icons**: Pill-shaped backgrounds with backdrop blur effects
+- **Latest Tech Stack**: TypeScript 5.x, Jest 29, modern Vercel APIs, and native fetch
+- **Improved Performance**: Updated dependencies for better security and speed
+
 # Description
 
 A few months ago, GitHub launched a new feature call Magic Readme which is that file readme will be appear in your GitHub profile and you can set your skills, portfolio, etc in that file readme.

@@ -1,2 +1,3 @@
 node_modules
-.vercelyarn.lock
+.vercel
+yarn.lock
