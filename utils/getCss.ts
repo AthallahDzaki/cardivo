@@ -23,35 +23,44 @@ export const css = ({ backgroundColor, pattern, opacity, colorPattern , fontColo
         src: url(data:font/woff2;charset=utf-8;base64,${monserrat700}) format('woff2');
       }
       .animate-image {
-        animation: image-transition 2s ease-in-out
+        animation: image-transition 1.5s cubic-bezier(0.4, 0, 0.2, 1)
       }
       .animate-transition {
-        animation: transition-animate 2s ease-in-out;
+        animation: transition-animate 1.5s cubic-bezier(0.4, 0, 0.2, 1);
       }
       @keyframes transition-animate {
         0% {
-          transform: translateX(-300px);
+          transform: translateX(-40px);
+          opacity: 0;
         }
         100% {
-          transform: translateX(0px);
+          transform: translateX(0);
+          opacity: 1;
         }
       }
       @keyframes image-transition {
         0% {
-          transform: translateX(300px);
+          transform: scale(0.8);
+          opacity: 0;
         }
         100% {
-          transform: translateX(0px);
+          transform: scale(1);
+          opacity: 1;
         }
       }
       .font-monserrat700 {
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         color: ${fontColor};
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
       }
       .font-monserratRegular {
         font-family: 'Montserrat', sans-serif;
         color: ${fontColor};
+        line-height: 1.6;
       }
       .card-wrapper {
         background: ${backgroundColor};
@@ -62,53 +71,82 @@ export const css = ({ backgroundColor, pattern, opacity, colorPattern , fontColo
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        padding: 5%;
+        padding: 3rem;
+        border-radius: 24px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      .card-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      h1 {
+        margin: 0;
+        padding: 0;
       }
       p{
-        font-size: .8rem;
-        margin-top: -4px;
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+        opacity: 0.95;
       }
       p.site {
-        margin-top: 10px;
+        margin-top: 1rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        opacity: 0.8;
       }
       .card-img {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
         border-radius: 50%;
         object-fit: cover;
-        transition: all .3s ease;
+        border: 4px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .card-wrapper-desc {
         display: flex; 
         flex-direction: column;
-        width: 70%;
+        width: 60%;
+        gap: 0.25rem;
       }
       .card-wrapper-img {
-        display:block;
-        padding-top: 8px;
-        margin: 2%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
       }
       .card-icon {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
         align-items: center;
-        font-size: 11px;
-        position: absolute;
-        bottom: 10px;;
-        right: 150px;
-        width: 100%;
+        gap: 1rem;
+        font-size: 0.75rem;
+        margin-top: 1.5rem;
+      }
+      .card-icon > div {
+        padding: 0.4rem 0.8rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        transition: all 0.2s ease;
       }
       div.line{
-        width: 0%;
-        min-width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
+        width: 100%;
+        height: 2px;
+        margin: 1rem 0;
+        background: linear-gradient(90deg, ${fontColor}30 0%, ${fontColor}10 100%);
         border: none;
-        border-bottom: 1px solid #666;
       }
     `
 }

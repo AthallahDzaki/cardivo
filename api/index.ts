@@ -1,8 +1,8 @@
-import { NowRequest, NowResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { cardRender } from '../utils/card';
 import toBase64ImageUrl from "../utils/toBase64"
 
-export default async function render(req: NowRequest, res: NowResponse) {
+export default async function render(req: VercelRequest, res: VercelResponse) {
     try {
         const { name, description, image, backgroundColor, iconColor, site, fontColor, pattern, opacity, colorPattern, instagram, linkedin, github, twitter, disableAnimation  } = req.query;
         
